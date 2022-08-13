@@ -15,7 +15,7 @@ public class StudentController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<List<StudentDto>>> GetAll2()
+    public async Task<ActionResult<List<StudentDto>>> GetAll()
     {
         var students = await _studentService.GetAll();
         return Ok(students.Select(_ => _.MapToDto()));
